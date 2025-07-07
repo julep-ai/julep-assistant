@@ -1,0 +1,42 @@
+name: Julep Documentation Crawler Task
+description: A Julep agent that can crawl the Julep documentation website and store the content in the document store with proper contextualization.
+
+########################################################
+################### INPUT SCHEMA #######################
+########################################################
+
+input_schema:
+  type: object
+  properties:
+    url:
+      type: string
+      description: "The URL of the documentation page"
+  required:
+    - url
+
+########################################################
+################### TOOLS ##############################
+########################################################
+
+
+tools:
+- name: spider_crawler
+  type: integration
+  integration:
+    provider: spider
+    setup:
+      spider_api_key: {spider_api_key}
+
+
+main:
+
+- tool: spider_crawler
+  arguments:
+    url: $ _['url']
+    params:
+      request: smart_mode
+      return_format: markdown
+      proxy_enabled: $ True
+      filter_output_images: $ True
+      filter_output_svg: $ True
+      readability: $ True
