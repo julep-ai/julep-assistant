@@ -28,12 +28,25 @@ async def on_chat_start():
     await cl.Message(
         content="""**Welcome to Julep AI Assistant!**
 
-I'm here to help you with:
+This assistant demonstrates how to build an intelligent documentation helper using Julep's powerful features. It showcases:
+
+• **RAG (Retrieval-Augmented Generation)**: Searches through Julep's documentation to provide accurate, context-aware answers
+• **Self-Improving Feedback Loop**: The agent learns from your feedback, updating its knowledge base to provide better answers over time
+• **Stateful Sessions**: Maintains conversation context across interactions
+• **Intelligent Hybrid Search**: Combines vector embeddings with text search for optimal document retrieval
+
+**📚 Resources:**
+- [View the source code on GitHub](https://github.com/julep-ai/julep-assistant)
+- [Follow the tutorial in our docs](https://docs.julep.ai/tutorials/julep-assistant)
+
+**How I can help you:**
 - Writing and debugging Julep workflows
 - Understanding Julep concepts (agents, tasks, sessions, tools, etc.)
 - Providing code examples
 - Explaining API usage and best practices
 - Troubleshooting and optimization tips
+
+💡 **Tip**: Use the feedback buttons (👍/👎) on my responses to help me improve!
 
 """
     ).send()

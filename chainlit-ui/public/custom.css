@@ -1,0 +1,318 @@
+/* Chainlit Custom Theme - Teal Color Scheme */
+
+/* Convert HSL to actual colors for use */
+:root {
+  --teal-primary: hsl(179, 32%, 39%);
+  --teal-primary-rgb: 67, 128, 127;
+  --teal-hover: hsl(179, 30%, 31%);
+  --teal-light: hsl(179, 20%, 94%);
+}
+
+/* Override Radix UI colors */
+[data-radix-ui-root] {
+  --primary: 179 32% 39% !important;
+  --primary-foreground: 0 0% 98% !important;
+}
+
+/* Force override ALL primary-colored elements */
+:root,
+.light,
+.dark {
+  --primary: 179 32% 39% !important;
+  --primary-foreground: 0 0% 98% !important;
+  --accent: 179 25% 85% !important;
+  --accent-foreground: 179 32% 20% !important;
+  --ring: 179 32% 39% !important;
+}
+
+/* Override MUI theme colors */
+.MuiButtonBase-root.MuiButton-containedPrimary {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+.MuiButtonBase-root.MuiButton-containedPrimary:hover {
+  background-color: var(--teal-hover) !important;
+}
+
+/* Override icon buttons */
+.MuiButtonBase-root.MuiIconButton-colorPrimary {
+  color: var(--teal-primary) !important;
+}
+
+/* Override FAB buttons */
+.MuiButtonBase-root.MuiFab-primary {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+.MuiButtonBase-root.MuiFab-primary:hover {
+  background-color: var(--teal-hover) !important;
+}
+
+/* Specific Chainlit component overrides */
+/* Send button */
+button[type="submit"],
+button[aria-label*="send" i],
+button[aria-label*="Send" i],
+.send-button {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+button[type="submit"]:hover,
+button[aria-label*="send" i]:hover,
+button[aria-label*="Send" i]:hover {
+  background-color: var(--teal-hover) !important;
+}
+
+/* Message input area buttons */
+form button,
+.MuiInputAdornment-root button,
+.MuiOutlinedInput-root button {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+/* Override SVG icons */
+svg.MuiSvgIcon-colorPrimary,
+svg[color="primary"],
+.MuiSvgIcon-root.MuiSvgIcon-colorPrimary {
+  color: var(--teal-primary) !important;
+  fill: var(--teal-primary) !important;
+}
+
+/* Override sparkle/decorative icons */
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg,
+.MuiTypography-root svg {
+  color: var(--teal-primary) !important;
+  fill: var(--teal-primary) !important;
+}
+
+/* Force all buttons with pink/red backgrounds */
+button[style*="background-color: rgb(248, 0, 97)"],
+button[style*="background-color: rgb(236, 72, 153)"],
+button[style*="background-color: #F80061"],
+button[style*="background-color: #ec4899"] {
+  background-color: var(--teal-primary) !important;
+}
+
+/* Override any pink text */
+[style*="color: rgb(248, 0, 97)"],
+[style*="color: rgb(236, 72, 153)"],
+[style*="color: #F80061"],
+[style*="color: #ec4899"] {
+  color: var(--teal-primary) !important;
+}
+
+/* Action buttons */
+.action-button,
+button.action-button {
+  color: var(--teal-primary) !important;
+  border-color: var(--teal-primary) !important;
+}
+
+.action-button:hover {
+  background-color: var(--teal-light) !important;
+}
+
+/* Feedback buttons */
+button[aria-label*="helpful" i] {
+  color: var(--teal-primary) !important;
+  border-color: var(--teal-primary) !important;
+}
+
+button[aria-label*="helpful" i]:hover {
+  background-color: var(--teal-light) !important;
+}
+
+/* Loading indicators */
+.MuiCircularProgress-colorPrimary {
+  color: var(--teal-primary) !important;
+}
+
+/* Links */
+a {
+  color: var(--teal-primary) !important;
+}
+
+/* Focus outlines */
+*:focus-visible {
+  outline-color: var(--teal-primary) !important;
+}
+
+/* Gradient background - light mode only */
+body:not(.dark),
+#root:not(.dark),
+.light body,
+.light #root {
+  background: linear-gradient(to bottom right, #f0fdfa, #ffffff, #f0f9ff) !important;
+}
+
+/* Dark mode background */
+.dark body,
+.dark #root,
+body.dark,
+#root.dark {
+  background: hsl(0, 0%, 3.9%) !important;
+}
+
+/* Override Material-UI primary palette */
+.MuiThemeProvider-root {
+  --mui-palette-primary-main: rgb(67, 128, 127) !important;
+  --mui-palette-primary-dark: rgb(54, 105, 103) !important;
+  --mui-palette-primary-light: rgb(230, 242, 242) !important;
+  --mui-palette-primary-contrastText: #fff !important;
+}
+
+/* Target Chainlit specific classes */
+.cl-button-primary {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+.cl-button-primary:hover {
+  background-color: var(--teal-hover) !important;
+}
+
+/* New message button */
+#new-chat-button,
+button[aria-label*="new chat" i],
+button[aria-label*="New chat" i] {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+/* Scroll to bottom button */
+button[aria-label*="scroll" i] {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+/* Force override with maximum specificity */
+body * {
+  --primary: 179 32% 39% !important;
+  --primary-foreground: 0 0% 98% !important;
+}
+
+/* Target all button variants */
+button.MuiButton-root,
+button.MuiButtonBase-root,
+button.MuiIconButton-root,
+button.MuiFab-root {
+  transition: all 0.2s ease;
+}
+
+/* Ensure all primary-colored buttons use teal */
+button[class*="Primary" i]:not([class*="text"]) {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+button[class*="Primary" i]:not([class*="text"]):hover {
+  background-color: var(--teal-hover) !important;
+}
+
+/* Override inline styles with !important */
+[style*="background-color"] button {
+  background-color: var(--teal-primary) !important;
+}
+
+/* Last resort: target by common button shapes/positions */
+/* Round buttons (like FABs) */
+button[style*="border-radius: 50%"],
+button[style*="border-radius:50%"] {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+/* Buttons in the bottom input area */
+form button[type="submit"],
+form button:last-child {
+  background-color: var(--teal-primary) !important;
+  color: white !important;
+}
+
+/* Dark mode specific overrides */
+.dark {
+  --teal-primary: hsl(179, 32%, 50%);
+  --teal-hover: hsl(179, 32%, 60%);
+  --teal-light: hsl(179, 20%, 20%);
+}
+
+/* Dark mode button contrast fixes */
+.dark button[type="submit"],
+.dark .MuiButton-containedPrimary,
+.dark .MuiFab-primary {
+  background-color: hsl(179, 32%, 50%) !important;
+  color: hsl(0, 0%, 9%) !important;
+}
+
+.dark button[type="submit"]:hover,
+.dark .MuiButton-containedPrimary:hover,
+.dark .MuiFab-primary:hover {
+  background-color: hsl(179, 32%, 60%) !important;
+}
+
+/* Dark mode text buttons */
+.dark .MuiButton-text,
+.dark button.action-button,
+.dark button[aria-label*="helpful"] {
+  color: hsl(179, 32%, 70%) !important;
+  border-color: hsl(179, 32%, 30%) !important;
+}
+
+.dark .MuiButton-text:hover,
+.dark button.action-button:hover,
+.dark button[aria-label*="helpful"]:hover {
+  background-color: hsl(179, 20%, 20%) !important;
+  border-color: hsl(179, 32%, 50%) !important;
+}
+
+/* Dark mode icons */
+.dark svg.MuiSvgIcon-root,
+.dark .MuiIconButton-root {
+  color: hsl(179, 32%, 70%) !important;
+}
+
+/* Dark mode links */
+.dark a {
+  color: hsl(179, 32%, 70%) !important;
+}
+
+/* Dark mode input fields */
+.dark .MuiInputBase-root,
+.dark .MuiOutlinedInput-root {
+  background-color: hsl(0, 0%, 8%) !important;
+  border-color: hsl(0, 0%, 20%) !important;
+  color: hsl(0, 0%, 98%) !important;
+}
+
+/* Dark mode cards */
+.dark .MuiCard-root,
+.dark .MuiPaper-root {
+  background-color: hsl(0, 0%, 8%) !important;
+  color: hsl(0, 0%, 98%) !important;
+}
+
+/* Ensure text is readable in dark mode */
+.dark .MuiTypography-root,
+.dark p,
+.dark span,
+.dark div {
+  color: hsl(0, 0%, 98%) !important;
+}
+
+/* Dark mode code blocks */
+.dark pre,
+.dark code {
+  background-color: hsl(0, 0%, 10%) !important;
+  color: hsl(0, 0%, 90%) !important;
+  border-color: hsl(0, 0%, 20%) !important;
+}
+
+/* Fix contrast for muted text in dark mode */
+.dark .text-muted,
+.dark .MuiTypography-colorTextSecondary {
+  color: hsl(0, 0%, 63.9%) !important;
+}
